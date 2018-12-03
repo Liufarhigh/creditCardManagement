@@ -1,0 +1,23 @@
+boolean createUser(String UName,String ID,String UTel)//根据各种信息进行开户,并说明创建是否成功
+
+boolean logIn(String UID,String psd)//登录，返回是否成功
+
+boolean ice(String UID)//冻结账户
+
+boolean saveMoney(String money,String UID)//存款
+
+boolean takeMoney(String money,String UID)//取款
+
+boolean moveMoney(String targetID,String UID,String money)//转账
+
+String qureyFund(String UID)//查询余额
+
+String[] qureyHis(String UID)//查询交易历史
+
+boolean isLose(String UID)//挂失
+
+boolean unLose(String UID,String ID)//解除挂失
+
+boolean updateInfo(String UID,String newPsd,String oldPsd,String UTel)//修改信息
+
+boolean deleteAc(String UID,String AcNum,String psd)//销户
