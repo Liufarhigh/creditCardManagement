@@ -1,54 +1,43 @@
 String createUser(String UName,String ID,String UTel,String psd)//开户,输入用户名，身份信息，联系方式，密码，并返回创建的用户号
-测试：
-输入：王小明，422130199812310077，13886439776，123456
-输出：1
-String createAC(String UID)//创建账号,输入用户号,并返回创建的账号
-测试：
-输入：1
-输出：1001
+
+String createAc(String UID)//创建账号,输入用户号,并返回创建的账号
 
 int logIn(String UID,String psd)//登录，输入用户号、密码，返回结果(0标识成功，1标识用户不存在，2标识密码错误)
-测试：
-输入：1，123456
-输出：登陆成功/用户不存在/密码错误请重新输入
 
-boolean saveMoney(String money,String AcNum)//存款,输入金额，账号
-测试：
-输入：10000，1001
-输出：存款成功，当前余额5000
+//boolean ice(String AcNum)//冻结账户，输入一个账号，返回是否成功
+
+boolean saveMoney(String money,String AcNum)//存款,输入金额，账号,返回结果
 
 boolean takeMoney(String money,String AcNum)//取款,输入金额，账号，返回结果(true标识成功，false标识余额不足)
-测试：
-输入：10000，1001
-输出：取款成功/余额不足，取款失败
 
 int moveMoney(String targetAc,String AcNum,String money)//转账,输入目标账号，本账号，金额，返回结果(0标识成功，1标识目标账号不存在，2标识余额不足)
-测试：
-输入：1002，1001，5000
-输出：转账成功/目标账号不存在/当前余额不足
 
 String qureyFund(String AcNum)//查询余额,输入账号，返回余额
-测试：
-输入：1001
-输出：当前余额5000
 
-String[] qureyHis(String UID)//查询交易历史,输入用户号，返回用户的交易历史(账户、交易时间、交易金额、交易类型)
-测试：
-输入：1
-输出：1001，12.3, 5000，存款/取款/转账
+String[] qureyHis(String UID)//查询交易历史,输入用户号，返回用户的交易历史
+
+boolean canUse(String AcNum)//卡片是否被挂失,输入账号，返回判断结果
 
 boolean isLose(String AcNum)//挂失,返回提示
-测试：
-输入：1001
-输出：挂失成功
 
 boolean unLose(String AcNum,String ID)//解除挂失,输入账号，用户身份信息,返回结果(true标识成功，false标识身份信息错误)
-测试:
-输入：1001，422130199812310077
-输出：解挂成功/身份信息错误
 
 int updateInfo(String UID,String newPsd,String oldPsd,String UTel)//修改信息,输入用户号，新密码，旧密码，联系方式,返回结果(0标识成功，1标识旧密码错误)
-测试：
-输入：1，456789，123456，13886439776
-输出：修改成功！/旧密码填写错误
+
 boolean deleteAc(String AcNum)//销卡,输入卡号，返回(true标识成功，false标识卡中有余额)
+
+String[] queryAc(String UID)//查询所有账号信息,输入用户号
+
+void createUser(String UID)//通过用户号创建相关的类
+
+User类中函数
+
+getUID()//获取用户号
+
+getUName()//获取姓名
+
+getID()//获取用户信息
+
+getUTel()//获取用户联系方式
+
+getPsd()//获取密码
